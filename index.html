@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metro Ticket Booking</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-subway"></i>
+                <span>MetroBook</span>
+            </div>
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#booking">Book Ticket</a></li>
+                    <li><a href="#routes">Routes</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Book Your Metro Tickets Online</h1>
+                <p>Fast, convenient, and cashless metro travel. Book your tickets in advance and skip the queues.</p>
+                <a href="#booking" class="cta-button">Book Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Section -->
+    <section id="booking" class="booking-section">
+        <div class="container">
+            <h2>Book Your Ticket</h2>
+            <div class="booking-container">
+                <form id="bookingForm" class="booking-form">
+                    <div class="form-group">
+                        <label for="from">From Station</label>
+                        <select id="from" name="from" required>
+                            <option value="">Select departure station</option>
+                            <option value="central">Central Station</option>
+                            <option value="downtown">Downtown</option>
+                            <option value="airport">Airport</option>
+                            <option value="university">University</option>
+                            <option value="mall">Shopping Mall</option>
+                            <option value="hospital">City Hospital</option>
+                            <option value="stadium">Sports Stadium</option>
+                            <option value="park">City Park</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="to">To Station</label>
+                        <select id="to" name="to" required>
+                            <option value="">Select destination station</option>
+                            <option value="central">Central Station</option>
+                            <option value="downtown">Downtown</option>
+                            <option value="airport">Airport</option>
+                            <option value="university">University</option>
+                            <option value="mall">Shopping Mall</option>
+                            <option value="hospital">City Hospital</option>
+                            <option value="stadium">Sports Stadium</option>
+                            <option value="park">City Park</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="date">Travel Date</label>
+                        <input type="date" id="date" name="date" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="time">Preferred Time</label>
+                        <input type="time" id="time" name="time" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="passengers">Number of Passengers</label>
+                        <select id="passengers" name="passengers" required>
+                            <option value="1">1 Passenger</option>
+                            <option value="2">2 Passengers</option>
+                            <option value="3">3 Passengers</option>
+                            <option value="4">4 Passengers</option>
+                            <option value="5">5 Passengers</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="ticketType">Ticket Type</label>
+                        <select id="ticketType" name="ticketType" required>
+                            <option value="regular">Regular ($2.50)</option>
+                            <option value="student">Student ($1.50)</option>
+                            <option value="senior">Senior ($1.75)</option>
+                            <option value="day-pass">Day Pass ($8.00)</option>
+                        </select>
+                    </div>
+
+                    <div class="price-display">
+                        <h3>Total Price: $<span id="totalPrice">0.00</span></h3>
+                    </div>
+
+                    <button type="submit" class="book-button">
+                        <i class="fas fa-credit-card"></i>
+                        Book Ticket
+                    </button>
+                </form>
+
+                <div class="booking-info">
+                    <h3>Quick Info</h3>
+                    <div class="info-cards">
+                        <div class="info-card">
+                            <i class="fas fa-clock"></i>
+                            <h4>Operating Hours</h4>
+                            <p>5:00 AM - 12:00 AM</p>
+                        </div>
+                        <div class="info-card">
+                            <i class="fas fa-route"></i>
+                            <h4>8 Stations</h4>
+                            <p>Covering major city areas</p>
+                        </div>
+                        <div class="info-card">
+                            <i class="fas fa-mobile-alt"></i>
+                            <h4>Mobile Tickets</h4>
+                            <p>Show QR code to enter</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Routes Section -->
+    <section id="routes" class="routes-section">
+        <div class="container">
+            <h2>Metro Routes</h2>
+            <div class="route-map">
+                <div class="route-line">
+                    <div class="station" data-station="central">
+                        <div class="station-dot"></div>
+                        <span>Central Station</span>
+                    </div>
+                    <div class="station" data-station="downtown">
+                        <div class="station-dot"></div>
+                        <span>Downtown</span>
+                    </div>
+                    <div class="station" data-station="university">
+                        <div class="station-dot"></div>
+                        <span>University</span>
+                    </div>
+                    <div class="station" data-station="mall">
+                        <div class="station-dot"></div>
+                        <span>Shopping Mall</span>
+                    </div>
+                    <div class="station" data-station="hospital">
+                        <div class="station-dot"></div>
+                        <span>City Hospital</span>
+                    </div>
+                    <div class="station" data-station="airport">
+                        <div class="station-dot"></div>
+                        <span>Airport</span>
+                    </div>
+                    <div class="station" data-station="stadium">
+                        <div class="station-dot"></div>
+                        <span>Sports Stadium</span>
+                    </div>
+                    <div class="station" data-station="park">
+                        <div class="station-dot"></div>
+                        <span>City Park</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Phone</h4>
+                            <p>+1 (555) 123-4567</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p>support@metrobook.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h4>Customer Service</h4>
+                            <p>24/7 Support Available</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="logo">
+                        <i class="fas fa-subway"></i>
+                        <span>MetroBook</span>
+                    </div>
+                    <p>Your trusted partner for metro travel booking.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#booking">Book Ticket</a></li>
+                        <li><a href="#routes">Routes</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 MetroBook. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Booking Confirmation Modal -->
+    <div id="confirmationModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="modal-header">
+                <i class="fas fa-check-circle"></i>
+                <h2>Booking Confirmed!</h2>
+            </div>
+            <div class="modal-body">
+                <div class="ticket">
+                    <div class="ticket-header">
+                        <h3>Metro Ticket</h3>
+                        <div class="qr-code">
+                            <i class="fas fa-qrcode"></i>
+                        </div>
+                    </div>
+                    <div class="ticket-details">
+                        <div class="ticket-row">
+                            <span>Booking ID:</span>
+                            <span id="bookingId"></span>
+                        </div>
+                        <div class="ticket-row">
+                            <span>From:</span>
+                            <span id="ticketFrom"></span>
+                        </div>
+                        <div class="ticket-row">
+                            <span>To:</span>
+                            <span id="ticketTo"></span>
+                        </div>
+                        <div class="ticket-row">
+                            <span>Date:</span>
+                            <span id="ticketDate"></span>
+                        </div>
+                        <div class="ticket-row">
+                            <span>Time:</span>
+                            <span id="ticketTime"></span>
+                        </div>
+                        <div class="ticket-row">
+                            <span>Passengers:</span>
+                            <span id="ticketPassengers"></span>
+                        </div>
+                        <div class="ticket-row">
+                            <span>Total:</span>
+                            <span id="ticketTotal"></span>
+                        </div>
+                    </div>
+                </div>
+                <p class="modal-note">Please save this ticket and show the QR code at the station.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
